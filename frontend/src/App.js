@@ -1,10 +1,10 @@
 import React from 'react';
-import TaskList from './components/TaskList';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <TaskList />
+      <NavBar />
     </div>
   );
 }
