@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrationController;
+use Laravel\Sanctum\Sanctum;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('login', [LoginController::class, 'login']);
-Route::get('task', [TaskController::class, 'index']);
+Route::post('register', [RegistrationController::class, 'register']);
+Route::get('task', [TaskController::class, 'index'])->middleware('auth:sanctum');
